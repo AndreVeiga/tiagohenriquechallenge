@@ -6,7 +6,8 @@ const PORT = process.env.PORT || 3000;
 
 app.use(cors());
 
-app.get('/', () => express.static(resolve(__dirname, './build')));
+app.get('/', (req, res) =>
+  res.send(express.static(resolve(__dirname, './build'))));
 
 app.listen(PORT, (err) => {
   if(err){
