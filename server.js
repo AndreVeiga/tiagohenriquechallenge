@@ -4,10 +4,9 @@ const cors = require('cors');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-app.use(cors())
-app.use('/', () => resolve(__dirname, './build'));
+app.use(cors());
 
-app.use('/favicon.ico', (req, res) => res.send());
+app.use('/', () => resolve(__dirname, './build'));
 
 app.listen(PORT, (err) => {
   if(err){
